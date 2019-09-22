@@ -1,0 +1,12 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index a5a9725..420ff59 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -8,3 +8,7 @@ members = [
+     "artifact-frontend",
+     "artifact-test",
+ ]
++
++default-members = [
++    "artifact-frontend",
++]

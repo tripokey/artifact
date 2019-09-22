@@ -56,7 +56,11 @@ pub fn start_api(cmd: super::Serve) {
     let _tmp_dir = host_frontend(&mut server, &cmd);
 
     // everything in a thread has to be owned by the thread
-    let addr = format!("127.0.0.1:{}", cmd.port);
+    let addr = if cmd.public {
+            format!("0.0.0.0:{}", cmd.port)
+        } else {
+            format!("127.0.0.1:{}", cmd.port)
+        };
     let _th = spawn(move || {
         server.listen(addr).expect("cannot connect to port");
     });

@@ -37,6 +37,10 @@ pub struct Serve {
     /// Select the port to serve on.
     #[structopt(default_value="5373")]
     pub port: u64,
+
+    /// Serve the web-ui publicly
+    #[structopt(short = "p")]
+    pub public: bool,
 }
 
 lazy_static! {
